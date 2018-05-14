@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center">GamesController#new</h1>
+  <p class="text-center">Find me in app/views/games_controller/new.html.erb</p>
+
+  <div class="letters">
+    <% @letters.each  do |letter| %>
+    <div class="letter">
+      <p class="text-center"><%= letter  %></p>
+    </div>
+    <% end %>
+  </div>
+
+
+
+  <form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="name" placeholder="What is the longest word ?">
+    <input id="tags_list" name="grid" type="hidden" value="<%= @letters %>" />
+    <input type="submit">
+
+  </form>
+
+</div>
+
